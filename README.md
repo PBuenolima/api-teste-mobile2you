@@ -43,6 +43,7 @@ ele substitui por uma string vazia
 
 COMO EXECUTAR A LOGICA
 
-1- Comonado rails c
-2- Copiar todo código e colar linha por linha dentro do terminal
-3- Descobrir quantos diamantes foram encontrados no desafio :)
+1- Abrir o arquivo com o nome "desafio_logica_programação.rb" nesse app
+2- Abrir o terminal e digitar o comando rails c
+3- Copiar e colar linha por linha o código dentro do terminal
+4- Descobrir quantos diamantes foram encontrados no desafio :)
