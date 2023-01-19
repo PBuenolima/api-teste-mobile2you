@@ -23,7 +23,7 @@ COMO EXECUTAR O PROJETO:
 
 1- bundle install
 2- rails db:create
-3- executar o comando curl -X POST "http://localhost:3000/api/v1/import_csv"
+3- abrir o postman e criar a rota POST citado acima
 4- rails db:migrate
 5- abrir o postman e digitar http://localhost:3000/api/v1/movies/genre/TV%20Show para filmes filtrados por TV show
 6- digitar http://localhost:3000/api/v1/movies/all/movies para ver todos os filmes da database
