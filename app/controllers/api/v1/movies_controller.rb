@@ -5,7 +5,7 @@ class Api::V1::MoviesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def import_csv
-    filepath = Rails.root.join('app', 'data', 'netflix_titles.csv')
+    filepath = params[:csv_file].tempfile
     CSV.foreach(filepath, headers: :first_row) do |row|
       new_movie = Movie.new(
         show_id: row['show_id'],
@@ -27,7 +27,7 @@ class Api::V1::MoviesController < ApplicationController
   end
 
   def get_movies
-    @movies = Movie.all.where("#{params[:type]}": params[:value]).order(published_at: :asc)
+    @movies = Movie.all.where("#{params[:type]}": params[:value].capitalize).order(published_at: :asc)
     @movies = Movie.all.order(published_at: :asc) if params[:type] == 'all' && params[:value] == 'movies'
     render json: format_response(@movies)
   end
